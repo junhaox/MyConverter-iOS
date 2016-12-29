@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A160F0431E14CBB6008C3202 /* ChooseUnitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160F0411E14CBB6008C3202 /* ChooseUnitTableViewController.swift */; };
+		A160F0441E14CBB6008C3202 /* ChooseUnitTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A160F0421E14CBB6008C3202 /* ChooseUnitTableViewController.xib */; };
 		A18CE8071E14AFF100F17891 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CE8061E14AFF100F17891 /* AppDelegate.swift */; };
-		A18CE8091E14AFF100F17891 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CE8081E14AFF100F17891 /* FirstViewController.swift */; };
-		A18CE80B1E14AFF100F17891 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CE80A1E14AFF100F17891 /* SecondViewController.swift */; };
 		A18CE80E1E14AFF100F17891 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A18CE80C1E14AFF100F17891 /* Main.storyboard */; };
 		A18CE8101E14AFF100F17891 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A18CE80F1E14AFF100F17891 /* Assets.xcassets */; };
 		A18CE8131E14AFF100F17891 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A18CE8111E14AFF100F17891 /* LaunchScreen.storyboard */; };
@@ -39,10 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A160F0411E14CBB6008C3202 /* ChooseUnitTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseUnitTableViewController.swift; sourceTree = "<group>"; };
+		A160F0421E14CBB6008C3202 /* ChooseUnitTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseUnitTableViewController.xib; sourceTree = "<group>"; };
 		A18CE8031E14AFF100F17891 /* UnitConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18CE8061E14AFF100F17891 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A18CE8081E14AFF100F17891 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		A18CE80A1E14AFF100F17891 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		A18CE80D1E14AFF100F17891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A18CE80F1E14AFF100F17891 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A18CE8121E14AFF100F17891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -108,8 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				A18CE8061E14AFF100F17891 /* AppDelegate.swift */,
-				A18CE8081E14AFF100F17891 /* FirstViewController.swift */,
-				A18CE80A1E14AFF100F17891 /* SecondViewController.swift */,
 				A18CE80C1E14AFF100F17891 /* Main.storyboard */,
 				A18CE80F1E14AFF100F17891 /* Assets.xcassets */,
 				A18CE8111E14AFF100F17891 /* LaunchScreen.storyboard */,
@@ -118,6 +116,8 @@
 				A18CE8371E14B11F00F17891 /* UnitTableViewController.xib */,
 				A18CE83A1E14B29800F17891 /* CurrencyTableViewController.swift */,
 				A18CE83B1E14B29800F17891 /* CurrencyTableViewController.xib */,
+				A160F0411E14CBB6008C3202 /* ChooseUnitTableViewController.swift */,
+				A160F0421E14CBB6008C3202 /* ChooseUnitTableViewController.xib */,
 			);
 			path = UnitConverter;
 			sourceTree = "<group>";
@@ -252,6 +252,7 @@
 			files = (
 				A18CE8131E14AFF100F17891 /* LaunchScreen.storyboard in Resources */,
 				A18CE8101E14AFF100F17891 /* Assets.xcassets in Resources */,
+				A160F0441E14CBB6008C3202 /* ChooseUnitTableViewController.xib in Resources */,
 				A18CE80E1E14AFF100F17891 /* Main.storyboard in Resources */,
 				A18CE8391E14B11F00F17891 /* UnitTableViewController.xib in Resources */,
 				A18CE83D1E14B29800F17891 /* CurrencyTableViewController.xib in Resources */,
@@ -279,9 +280,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A18CE80B1E14AFF100F17891 /* SecondViewController.swift in Sources */,
 				A18CE8071E14AFF100F17891 /* AppDelegate.swift in Sources */,
-				A18CE8091E14AFF100F17891 /* FirstViewController.swift in Sources */,
+				A160F0431E14CBB6008C3202 /* ChooseUnitTableViewController.swift in Sources */,
 				A18CE8381E14B11F00F17891 /* UnitTableViewController.swift in Sources */,
 				A18CE83C1E14B29800F17891 /* CurrencyTableViewController.swift in Sources */,
 			);
@@ -534,6 +534,7 @@
 				A18CE82F1E14AFF100F17891 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A18CE8301E14AFF100F17891 /* Build configuration list for PBXNativeTarget "UnitConverterTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +543,7 @@
 				A18CE8321E14AFF100F17891 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A18CE8331E14AFF100F17891 /* Build configuration list for PBXNativeTarget "UnitConverterUITests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +552,7 @@
 				A18CE8351E14AFF100F17891 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
