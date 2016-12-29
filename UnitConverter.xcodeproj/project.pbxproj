@@ -15,6 +15,10 @@
 		A18CE8131E14AFF100F17891 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A18CE8111E14AFF100F17891 /* LaunchScreen.storyboard */; };
 		A18CE81E1E14AFF100F17891 /* UnitConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CE81D1E14AFF100F17891 /* UnitConverterTests.swift */; };
 		A18CE8291E14AFF100F17891 /* UnitConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CE8281E14AFF100F17891 /* UnitConverterUITests.swift */; };
+		A18CE8381E14B11F00F17891 /* UnitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CE8361E14B11F00F17891 /* UnitTableViewController.swift */; };
+		A18CE8391E14B11F00F17891 /* UnitTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18CE8371E14B11F00F17891 /* UnitTableViewController.xib */; };
+		A18CE83C1E14B29800F17891 /* CurrencyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CE83A1E14B29800F17891 /* CurrencyTableViewController.swift */; };
+		A18CE83D1E14B29800F17891 /* CurrencyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18CE83B1E14B29800F17891 /* CurrencyTableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		A18CE8241E14AFF100F17891 /* UnitConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitConverterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18CE8281E14AFF100F17891 /* UnitConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConverterUITests.swift; sourceTree = "<group>"; };
 		A18CE82A1E14AFF100F17891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A18CE8361E14B11F00F17891 /* UnitTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTableViewController.swift; sourceTree = "<group>"; };
+		A18CE8371E14B11F00F17891 /* UnitTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnitTableViewController.xib; sourceTree = "<group>"; };
+		A18CE83A1E14B29800F17891 /* CurrencyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewController.swift; sourceTree = "<group>"; };
+		A18CE83B1E14B29800F17891 /* CurrencyTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrencyTableViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,10 @@
 				A18CE80F1E14AFF100F17891 /* Assets.xcassets */,
 				A18CE8111E14AFF100F17891 /* LaunchScreen.storyboard */,
 				A18CE8141E14AFF100F17891 /* Info.plist */,
+				A18CE8361E14B11F00F17891 /* UnitTableViewController.swift */,
+				A18CE8371E14B11F00F17891 /* UnitTableViewController.xib */,
+				A18CE83A1E14B29800F17891 /* CurrencyTableViewController.swift */,
+				A18CE83B1E14B29800F17891 /* CurrencyTableViewController.xib */,
 			);
 			path = UnitConverter;
 			sourceTree = "<group>";
@@ -241,6 +253,8 @@
 				A18CE8131E14AFF100F17891 /* LaunchScreen.storyboard in Resources */,
 				A18CE8101E14AFF100F17891 /* Assets.xcassets in Resources */,
 				A18CE80E1E14AFF100F17891 /* Main.storyboard in Resources */,
+				A18CE8391E14B11F00F17891 /* UnitTableViewController.xib in Resources */,
+				A18CE83D1E14B29800F17891 /* CurrencyTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +282,8 @@
 				A18CE80B1E14AFF100F17891 /* SecondViewController.swift in Sources */,
 				A18CE8071E14AFF100F17891 /* AppDelegate.swift in Sources */,
 				A18CE8091E14AFF100F17891 /* FirstViewController.swift in Sources */,
+				A18CE8381E14B11F00F17891 /* UnitTableViewController.swift in Sources */,
+				A18CE83C1E14B29800F17891 /* CurrencyTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
