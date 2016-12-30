@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		898020913409D7CEF3994322 /* Pods_UnitConverter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 663422FDAEE3BAF27E9FAFF5 /* Pods_UnitConverter.framework */; };
 		A160F0431E14CBB6008C3202 /* ChooseUnitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160F0411E14CBB6008C3202 /* ChooseUnitTableViewController.swift */; };
-		A160F0441E14CBB6008C3202 /* ChooseUnitTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A160F0421E14CBB6008C3202 /* ChooseUnitTableViewController.xib */; };
 		A1791E141E16395400A70F45 /* UnitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1791E121E16395400A70F45 /* UnitTableViewCell.swift */; };
-		A1791E151E16395400A70F45 /* UnitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1791E131E16395400A70F45 /* UnitTableViewCell.xib */; };
 		A1791E171E163D1600A70F45 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1791E161E163D1600A70F45 /* CurrencyTableViewCell.swift */; };
 		A18CE8071E14AFF100F17891 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CE8061E14AFF100F17891 /* AppDelegate.swift */; };
 		A18CE80E1E14AFF100F17891 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A18CE80C1E14AFF100F17891 /* Main.storyboard */; };
@@ -19,9 +18,8 @@
 		A18CE81E1E14AFF100F17891 /* UnitConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CE81D1E14AFF100F17891 /* UnitConverterTests.swift */; };
 		A18CE8291E14AFF100F17891 /* UnitConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CE8281E14AFF100F17891 /* UnitConverterUITests.swift */; };
 		A18CE8381E14B11F00F17891 /* UnitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CE8361E14B11F00F17891 /* UnitTableViewController.swift */; };
-		A18CE8391E14B11F00F17891 /* UnitTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18CE8371E14B11F00F17891 /* UnitTableViewController.xib */; };
 		A18CE83C1E14B29800F17891 /* CurrencyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CE83A1E14B29800F17891 /* CurrencyTableViewController.swift */; };
-		A18CE83D1E14B29800F17891 /* CurrencyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18CE83B1E14B29800F17891 /* CurrencyTableViewController.xib */; };
+		A1FB02341E1643480076CD3E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1FB02331E1643480076CD3E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02EA252EAEE8441F8327B23F /* Pods-UnitConverter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitConverter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnitConverter/Pods-UnitConverter.debug.xcconfig"; sourceTree = "<group>"; };
+		6255A8D206782A3FCB718D73 /* Pods-UnitConverter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitConverter.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnitConverter/Pods-UnitConverter.release.xcconfig"; sourceTree = "<group>"; };
+		663422FDAEE3BAF27E9FAFF5 /* Pods_UnitConverter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitConverter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A160F0411E14CBB6008C3202 /* ChooseUnitTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseUnitTableViewController.swift; sourceTree = "<group>"; };
-		A160F0421E14CBB6008C3202 /* ChooseUnitTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseUnitTableViewController.xib; sourceTree = "<group>"; };
 		A1791E121E16395400A70F45 /* UnitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTableViewCell.swift; sourceTree = "<group>"; };
-		A1791E131E16395400A70F45 /* UnitTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnitTableViewCell.xib; sourceTree = "<group>"; };
 		A1791E161E163D1600A70F45 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
 		A18CE8031E14AFF100F17891 /* UnitConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18CE8061E14AFF100F17891 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,9 +59,8 @@
 		A18CE8281E14AFF100F17891 /* UnitConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConverterUITests.swift; sourceTree = "<group>"; };
 		A18CE82A1E14AFF100F17891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A18CE8361E14B11F00F17891 /* UnitTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTableViewController.swift; sourceTree = "<group>"; };
-		A18CE8371E14B11F00F17891 /* UnitTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnitTableViewController.xib; sourceTree = "<group>"; };
 		A18CE83A1E14B29800F17891 /* CurrencyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewController.swift; sourceTree = "<group>"; };
-		A18CE83B1E14B29800F17891 /* CurrencyTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrencyTableViewController.xib; sourceTree = "<group>"; };
+		A1FB02331E1643480076CD3E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				898020913409D7CEF3994322 /* Pods_UnitConverter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +89,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30D6AC03C9BDFCA91E9E3277 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				02EA252EAEE8441F8327B23F /* Pods-UnitConverter.debug.xcconfig */,
+				6255A8D206782A3FCB718D73 /* Pods-UnitConverter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5927078D9CA5954A3A8566EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				663422FDAEE3BAF27E9FAFF5 /* Pods_UnitConverter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A18CE7FA1E14AFF100F17891 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +113,8 @@
 				A18CE81C1E14AFF100F17891 /* UnitConverterTests */,
 				A18CE8271E14AFF100F17891 /* UnitConverterUITests */,
 				A18CE8041E14AFF100F17891 /* Products */,
+				30D6AC03C9BDFCA91E9E3277 /* Pods */,
+				5927078D9CA5954A3A8566EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,20 +131,17 @@
 		A18CE8051E14AFF100F17891 /* UnitConverter */ = {
 			isa = PBXGroup;
 			children = (
+				A18CE80F1E14AFF100F17891 /* Assets.xcassets */,
 				A18CE8061E14AFF100F17891 /* AppDelegate.swift */,
 				A18CE80C1E14AFF100F17891 /* Main.storyboard */,
-				A18CE80F1E14AFF100F17891 /* Assets.xcassets */,
 				A18CE8111E14AFF100F17891 /* LaunchScreen.storyboard */,
-				A18CE8141E14AFF100F17891 /* Info.plist */,
 				A18CE8361E14B11F00F17891 /* UnitTableViewController.swift */,
-				A18CE8371E14B11F00F17891 /* UnitTableViewController.xib */,
 				A1791E121E16395400A70F45 /* UnitTableViewCell.swift */,
-				A1791E131E16395400A70F45 /* UnitTableViewCell.xib */,
-				A18CE83A1E14B29800F17891 /* CurrencyTableViewController.swift */,
-				A18CE83B1E14B29800F17891 /* CurrencyTableViewController.xib */,
-				A1791E161E163D1600A70F45 /* CurrencyTableViewCell.swift */,
 				A160F0411E14CBB6008C3202 /* ChooseUnitTableViewController.swift */,
-				A160F0421E14CBB6008C3202 /* ChooseUnitTableViewController.xib */,
+				A18CE83A1E14B29800F17891 /* CurrencyTableViewController.swift */,
+				A1791E161E163D1600A70F45 /* CurrencyTableViewCell.swift */,
+				A18CE8141E14AFF100F17891 /* Info.plist */,
+				A1FB02331E1643480076CD3E /* GoogleService-Info.plist */,
 			);
 			path = UnitConverter;
 			sourceTree = "<group>";
@@ -156,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A18CE82D1E14AFF100F17891 /* Build configuration list for PBXNativeTarget "UnitConverter" */;
 			buildPhases = (
+				59208412775421D50EFCAAEF /* [CP] Check Pods Manifest.lock */,
 				A18CE7FF1E14AFF100F17891 /* Sources */,
 				A18CE8001E14AFF100F17891 /* Frameworks */,
 				A18CE8011E14AFF100F17891 /* Resources */,
+				9C8BE54B87E79E58DE0B9765 /* [CP] Embed Pods Frameworks */,
+				A0A39705D3B769FF5B37B8AC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,12 +278,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A18CE8131E14AFF100F17891 /* LaunchScreen.storyboard in Resources */,
+				A1FB02341E1643480076CD3E /* GoogleService-Info.plist in Resources */,
 				A18CE8101E14AFF100F17891 /* Assets.xcassets in Resources */,
-				A160F0441E14CBB6008C3202 /* ChooseUnitTableViewController.xib in Resources */,
-				A1791E151E16395400A70F45 /* UnitTableViewCell.xib in Resources */,
 				A18CE80E1E14AFF100F17891 /* Main.storyboard in Resources */,
-				A18CE8391E14B11F00F17891 /* UnitTableViewController.xib in Resources */,
-				A18CE83D1E14B29800F17891 /* CurrencyTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +299,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		59208412775421D50EFCAAEF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9C8BE54B87E79E58DE0B9765 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UnitConverter/Pods-UnitConverter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0A39705D3B769FF5B37B8AC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UnitConverter/Pods-UnitConverter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A18CE7FF1E14AFF100F17891 /* Sources */ = {
@@ -445,6 +508,7 @@
 		};
 		A18CE82E1E14AFF100F17891 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02EA252EAEE8441F8327B23F /* Pods-UnitConverter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FX9CLSC33R;
@@ -458,6 +522,7 @@
 		};
 		A18CE82F1E14AFF100F17891 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6255A8D206782A3FCB718D73 /* Pods-UnitConverter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FX9CLSC33R;
