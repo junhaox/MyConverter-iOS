@@ -27,25 +27,32 @@ class CurrencyTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    var currencyName = ["CNY", "USD", "SKW", "HKD"]
+    var currencyText = ["Chinese Yuan", "US Dollor", "South Korean Won", "Hong Kong Dollar"]
+    var currencyNum = ["6.92", "1.0", "1129.3", "9.54"]
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return currencyName.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "currencyCell", for: indexPath) as! CurrencyTableViewCell
 
         // Configure the cell...
+        cell.currencyName?.text = currencyName[indexPath.row]
+        cell.currencyText?.text = currencyText[indexPath.row]
+        cell.currencyNum?.text = currencyNum[indexPath.row]
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

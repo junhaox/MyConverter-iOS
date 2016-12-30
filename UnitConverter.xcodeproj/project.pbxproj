@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A160F0431E14CBB6008C3202 /* ChooseUnitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160F0411E14CBB6008C3202 /* ChooseUnitTableViewController.swift */; };
 		A160F0441E14CBB6008C3202 /* ChooseUnitTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A160F0421E14CBB6008C3202 /* ChooseUnitTableViewController.xib */; };
+		A1791E141E16395400A70F45 /* UnitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1791E121E16395400A70F45 /* UnitTableViewCell.swift */; };
+		A1791E151E16395400A70F45 /* UnitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1791E131E16395400A70F45 /* UnitTableViewCell.xib */; };
+		A1791E171E163D1600A70F45 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1791E161E163D1600A70F45 /* CurrencyTableViewCell.swift */; };
 		A18CE8071E14AFF100F17891 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CE8061E14AFF100F17891 /* AppDelegate.swift */; };
 		A18CE80E1E14AFF100F17891 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A18CE80C1E14AFF100F17891 /* Main.storyboard */; };
 		A18CE8101E14AFF100F17891 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A18CE80F1E14AFF100F17891 /* Assets.xcassets */; };
@@ -41,6 +44,9 @@
 /* Begin PBXFileReference section */
 		A160F0411E14CBB6008C3202 /* ChooseUnitTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseUnitTableViewController.swift; sourceTree = "<group>"; };
 		A160F0421E14CBB6008C3202 /* ChooseUnitTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseUnitTableViewController.xib; sourceTree = "<group>"; };
+		A1791E121E16395400A70F45 /* UnitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTableViewCell.swift; sourceTree = "<group>"; };
+		A1791E131E16395400A70F45 /* UnitTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnitTableViewCell.xib; sourceTree = "<group>"; };
+		A1791E161E163D1600A70F45 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
 		A18CE8031E14AFF100F17891 /* UnitConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18CE8061E14AFF100F17891 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A18CE80D1E14AFF100F17891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -114,8 +120,11 @@
 				A18CE8141E14AFF100F17891 /* Info.plist */,
 				A18CE8361E14B11F00F17891 /* UnitTableViewController.swift */,
 				A18CE8371E14B11F00F17891 /* UnitTableViewController.xib */,
+				A1791E121E16395400A70F45 /* UnitTableViewCell.swift */,
+				A1791E131E16395400A70F45 /* UnitTableViewCell.xib */,
 				A18CE83A1E14B29800F17891 /* CurrencyTableViewController.swift */,
 				A18CE83B1E14B29800F17891 /* CurrencyTableViewController.xib */,
+				A1791E161E163D1600A70F45 /* CurrencyTableViewCell.swift */,
 				A160F0411E14CBB6008C3202 /* ChooseUnitTableViewController.swift */,
 				A160F0421E14CBB6008C3202 /* ChooseUnitTableViewController.xib */,
 			);
@@ -253,6 +262,7 @@
 				A18CE8131E14AFF100F17891 /* LaunchScreen.storyboard in Resources */,
 				A18CE8101E14AFF100F17891 /* Assets.xcassets in Resources */,
 				A160F0441E14CBB6008C3202 /* ChooseUnitTableViewController.xib in Resources */,
+				A1791E151E16395400A70F45 /* UnitTableViewCell.xib in Resources */,
 				A18CE80E1E14AFF100F17891 /* Main.storyboard in Resources */,
 				A18CE8391E14B11F00F17891 /* UnitTableViewController.xib in Resources */,
 				A18CE83D1E14B29800F17891 /* CurrencyTableViewController.xib in Resources */,
@@ -284,6 +294,8 @@
 				A160F0431E14CBB6008C3202 /* ChooseUnitTableViewController.swift in Sources */,
 				A18CE8381E14B11F00F17891 /* UnitTableViewController.swift in Sources */,
 				A18CE83C1E14B29800F17891 /* CurrencyTableViewController.swift in Sources */,
+				A1791E171E163D1600A70F45 /* CurrencyTableViewCell.swift in Sources */,
+				A1791E141E16395400A70F45 /* UnitTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

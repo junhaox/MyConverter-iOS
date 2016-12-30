@@ -26,9 +26,9 @@ class UnitTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    var unitD = ["Cemimeter", "Kilometer", "Meter", "Milemeter"]
-    var unit = ["cm", "km", "m", "mm"]
-    var num = ["100", "0.01", "10", "1000"]
+    var unitName = ["Cemimeter", "Kilometer", "Meter", "Milemeter"]
+    var unitText = ["cm", "km", "m", "mm"]
+    var unitNum = ["100", "0.01", "10", "1000"]
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -37,16 +37,17 @@ class UnitTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return unit.count
+        return unitName.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "unitCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "unitCell", for: indexPath) as! UnitTableViewCell
 
         // Configure the cell...
-        cell.textLabel?.text = unitD[indexPath.row]
-        cell.detailTextLabel?.text = num[indexPath.row]
+        cell.unitName?.text = unitName[indexPath.row]
+        cell.unitText?.text = unitText[indexPath.row]
+        cell.unitNum?.text = unitNum[indexPath.row]
 
         return cell
     }
