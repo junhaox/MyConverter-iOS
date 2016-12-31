@@ -7,19 +7,21 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var tableView: UITableView!
     
-    @IBOutlet var currName: UILabel!
-    @IBOutlet var currAmount: UILabel!
-    @IBOutlet var currUnit: UILabel!
+    @IBOutlet weak var currName: UILabel!
+    @IBOutlet weak var currValue: UILabel!
+    @IBOutlet weak var currUnit: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,20 +29,20 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
-    var unitxName = ["Cemimeter", "Kilometer", "Meter", "Milemeter"]
+    var unitName = ["Cemimeter", "Kilometer", "Meter", "Milemeter"]
     var unitText = ["cm", "km", "m", "mm"]
     var unitNum = ["100", "0.01", "10", "1000"]
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return unitxName.count
+        return unitName.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "unitCell", for: indexPath) as! UnitTableViewCell
         
-        cell.name?.text = unitxName[indexPath.row]
-        cell.unit?.text = unitText[indexPath.row]
-        cell.amount?.text = unitNum[indexPath.row]
+        cell.nameLabel?.text = unitName[indexPath.row]
+        cell.valueLabel?.text = unitNum[indexPath.row]
+        cell.unitLabel?.text = unitText[indexPath.row]
         
         return cell
     }

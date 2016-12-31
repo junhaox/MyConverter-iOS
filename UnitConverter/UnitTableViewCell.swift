@@ -10,9 +10,10 @@ import UIKit
 
 class UnitTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var amount: UILabel!
-    @IBOutlet weak var unit: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var unitLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
