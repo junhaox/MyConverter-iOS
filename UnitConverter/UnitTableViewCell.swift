@@ -9,18 +9,10 @@
 import UIKit
 
 class UnitTableViewCell: UITableViewCell {
-<<<<<<< HEAD
-    
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var valueLabel: UILabel!
-    @IBOutlet weak var unitLabel: UILabel!
-    
-=======
 
     @IBOutlet weak var unitName: UILabel!
     @IBOutlet weak var unitNum: UILabel!
     @IBOutlet weak var unitText: UILabel!
->>>>>>> parent of 0a4c596... fixed
     
     override func awakeFromNib() {
         super.awakeFromNib()
