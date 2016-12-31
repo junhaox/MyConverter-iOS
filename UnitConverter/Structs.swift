@@ -8,7 +8,4 @@
 
 import Foundation
 
-struct unitData {
-    var name = ""
-    var unit = ""
-}
+

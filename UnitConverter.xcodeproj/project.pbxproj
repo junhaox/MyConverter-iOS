@@ -12,6 +12,7 @@
 		A10E461A1E178CEE008A4D39 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10E46191E178CEE008A4D39 /* Structs.swift */; };
 		A124906E1E1769F80063C6F7 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A124906D1E1769F80063C6F7 /* CurrencyViewController.swift */; };
 		A154FAD41E178242000B0EB2 /* UnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154FAD31E178242000B0EB2 /* UnitViewController.swift */; };
+		A161CF8C1E17944700918383 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A161CF8B1E17944700918383 /* GoogleService-Info.plist */; };
 		A1791E171E163D1600A70F45 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1791E161E163D1600A70F45 /* CurrencyTableViewCell.swift */; };
 		A18CE8071E14AFF100F17891 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CE8061E14AFF100F17891 /* AppDelegate.swift */; };
 		A18CE80E1E14AFF100F17891 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A18CE80C1E14AFF100F17891 /* Main.storyboard */; };
@@ -19,7 +20,6 @@
 		A18CE8131E14AFF100F17891 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A18CE8111E14AFF100F17891 /* LaunchScreen.storyboard */; };
 		A18CE81E1E14AFF100F17891 /* UnitConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CE81D1E14AFF100F17891 /* UnitConverterTests.swift */; };
 		A18CE8291E14AFF100F17891 /* UnitConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CE8281E14AFF100F17891 /* UnitConverterUITests.swift */; };
-		A1FB02341E1643480076CD3E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1FB02331E1643480076CD3E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +47,7 @@
 		A10E46191E178CEE008A4D39 /* Structs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		A124906D1E1769F80063C6F7 /* CurrencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		A154FAD31E178242000B0EB2 /* UnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitViewController.swift; sourceTree = "<group>"; };
+		A161CF8B1E17944700918383 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A1791E161E163D1600A70F45 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
 		A18CE8031E14AFF100F17891 /* UnitConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18CE8061E14AFF100F17891 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		A18CE8241E14AFF100F17891 /* UnitConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitConverterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18CE8281E14AFF100F17891 /* UnitConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConverterUITests.swift; sourceTree = "<group>"; };
 		A18CE82A1E14AFF100F17891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A1FB02331E1643480076CD3E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +141,7 @@
 				A1791E161E163D1600A70F45 /* CurrencyTableViewCell.swift */,
 				A10E46191E178CEE008A4D39 /* Structs.swift */,
 				A18CE8141E14AFF100F17891 /* Info.plist */,
-				A1FB02331E1643480076CD3E /* GoogleService-Info.plist */,
+				A161CF8B1E17944700918383 /* GoogleService-Info.plist */,
 			);
 			path = UnitConverter;
 			sourceTree = "<group>";
@@ -278,7 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A18CE8131E14AFF100F17891 /* LaunchScreen.storyboard in Resources */,
-				A1FB02341E1643480076CD3E /* GoogleService-Info.plist in Resources */,
+				A161CF8C1E17944700918383 /* GoogleService-Info.plist in Resources */,
 				A18CE8101E14AFF100F17891 /* Assets.xcassets in Resources */,
 				A18CE80E1E14AFF100F17891 /* Main.storyboard in Resources */,
 			);

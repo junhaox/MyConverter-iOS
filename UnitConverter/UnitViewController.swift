@@ -9,6 +9,11 @@
 import UIKit
 import FirebaseDatabase
 
+struct unitData {
+    var name: String
+    var unit: String
+}
+
 class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
@@ -18,8 +23,9 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var ref: FIRDatabaseReference!
     
-    var fullList = [unitData]()
-    var currList = [unitData]()
+    var fullList: [unitData] = []
+    var currList: [unitData] = []
+    
     
     var unitName = [String]()
     var unitValue = [String]()
@@ -34,11 +40,11 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         ref = FIRDatabase.database().reference()
         
-        ref.child("Unit").observe(.value, with: {
+        ref.child("Unit").child("Length").observe(.value, with: {
             snapshot in
             for child in snapshot.children {
-                self.fullList.append(unitData(name: (child as! FIRDataSnapshot).key, unit: (child as! FIRDataSnapshot).value))
-                self.currList.append(unitData(name: (child as! FIRDataSnapshot).key, unit: (child as! FIRDataSnapshot).value))
+                let data: unitData = unitData(name: (child as! FIRDataSnapshot).key, unit: (child as! FIRDataSnapshot).value as! String)
+                self.currList.append(data)
             }
         })
     }
@@ -49,7 +55,7 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return unitName.count
+        return currList.count
     }
     
     
@@ -58,7 +64,6 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "unitCell", for: indexPath) as! UnitTableViewCell
         
         cell.nameLabel?.text = currList[indexPath.row].name
-        cell.valueLabel?.text = unitValue[indexPath.row]
         cell.unitLabel?.text = currList[indexPath.row].unit
         
         return cell
