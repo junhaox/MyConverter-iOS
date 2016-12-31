@@ -7,10 +7,19 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var currName: UILabel!
+    @IBOutlet weak var currValue: UILabel!
+    @IBOutlet weak var currUnit: UILabel!
+    
+    var ref: FIRDatabaseReference!
+    
+    var fullList = [unitData]()
+    var currList = [unitData]()
     
     var unitName = [String]()
     var unitValue = [String]()
@@ -22,6 +31,16 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
         unitName = ["cilometers", "meters", "kilometers", "miles"]
         unitValue = ["1000", "10", "0.01", "0.016"]
         unitUnit = ["cm", "m", "km", "mi"]
+        
+        ref = FIRDatabase.database().reference()
+        
+        ref.child("Unit").observe(.value, with: {
+            snapshot in
+            for child in snapshot.children {
+                self.fullList.append(unitData(name: (child as! FIRDataSnapshot).key, unit: (child as! FIRDataSnapshot).value))
+                self.currList.append(unitData(name: (child as! FIRDataSnapshot).key, unit: (child as! FIRDataSnapshot).value))
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,9 +57,9 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "unitCell", for: indexPath) as! UnitTableViewCell
         
-        cell.nameLabel?.text = unitName[indexPath.row]
+        cell.nameLabel?.text = currList[indexPath.row].name
         cell.valueLabel?.text = unitValue[indexPath.row]
-        cell.unitLabel?.text = unitUnit[indexPath.row]
+        cell.unitLabel?.text = currList[indexPath.row].unit
         
         return cell
     }

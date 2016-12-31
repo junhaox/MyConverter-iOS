@@ -142,6 +142,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Unit" id="lfC-sF-34d"/>
                     <connections>
+                        <outlet property="currName" destination="1Nd-GH-rsp" id="X1I-Hj-GVb"/>
+                        <outlet property="currUnit" destination="yKb-sS-Tst" id="olD-P2-Z9e"/>
+                        <outlet property="currValue" destination="BqS-Vv-ZVV" id="vIf-8X-jcl"/>
                         <outlet property="tableView" destination="gZL-Vm-9eB" id="Y71-xS-mgx"/>
                     </connections>
                 </viewController>
@@ -361,7 +364,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Currency" id="peg-eA-AYf"/>
                     <connections>
-                        <outlet property="tableView" destination="OUe-Vo-bjY" id="GpF-Hf-t5y"/>
+                        <outlet property="tableView" destination="OUe-Vo-bjY" id="NCQ-xb-Ja4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tI-IU-8xT" userLabel="First Responder" sceneMemberID="firstResponder"/>
