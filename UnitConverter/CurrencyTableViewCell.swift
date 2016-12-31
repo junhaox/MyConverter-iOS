@@ -9,9 +9,12 @@
 import UIKit
 
 class CurrencyTableViewCell: UITableViewCell {
+    @IBOutlet weak var imageName: UIImageView!
     @IBOutlet weak var currencyName: UILabel!
-    @IBOutlet weak var currencyNum: UILabel!
-    @IBOutlet weak var currencyText: UILabel!
+    @IBOutlet weak var currencyValue: UILabel!
+    @IBOutlet weak var currencyUnit: UILabel!
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
