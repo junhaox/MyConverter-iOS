@@ -2,7 +2,7 @@
 //  UnitTableViewCell.swift
 //  UnitConverter
 //
-//  Created by Junhao Xie on 12/29/16.
+//  Created by Junhao Xie on 12/30/16.
 //  Copyright © 2016 Junhao Xie. All rights reserved.
 //
 
@@ -10,9 +10,9 @@ import UIKit
 
 class UnitTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var unitName: UILabel!
-    @IBOutlet weak var unitNum: UILabel!
-    @IBOutlet weak var unitText: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var unitLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,5 +24,5 @@ class UnitTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }
