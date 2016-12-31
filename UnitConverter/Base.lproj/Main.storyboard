@@ -78,12 +78,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1688.8" y="-325.18740629685158"/>
+            <point key="canvasLocation" x="2825" y="-325"/>
         </scene>
-        <!--View Controller-->
+        <!--Unit-->
         <scene sceneID="U5I-ZC-AUO">
             <objects>
-                <viewController id="QIR-TR-MhU" sceneMemberID="viewController">
+                <viewController id="QIR-TR-MhU" customClass="UnitViewController" customModule="UnitConverter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Bt-gm-Y7F"/>
                         <viewControllerLayoutGuide type="bottom" id="b3U-8L-2vw"/>
@@ -93,10 +93,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Unit" id="lfC-sF-34d"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kG6-LI-0Bk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2351" y="-442"/>
+            <point key="canvasLocation" x="1689" y="-325"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -129,7 +130,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="xuE-q9-nKX"/>
+                        <segue destination="QIR-TR-MhU" kind="relationship" relationship="rootViewController" id="xIG-RZ-0oh"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqY-Kk-DEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
