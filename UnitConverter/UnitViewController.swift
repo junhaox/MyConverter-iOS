@@ -10,8 +10,8 @@ import UIKit
 import FirebaseDatabase
 
 struct unitData {
-    var name: String
-    var unit: String
+    let name: String!
+    let unit: String!
 }
 
 class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -23,9 +23,11 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var ref: FIRDatabaseReference!
     
-    var fullList: [unitData] = []
-    var currList: [unitData] = []
+    var fullList = [unitData]()
+    var currList = [unitData]()
     
+    var currNum = 1.0
+    var currMeasurement = Measurement(value: 1.0, unit: UnitLength.meters)
     
     var unitName = [String]()
     var unitValue = [String]()
@@ -45,8 +47,13 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
             for child in snapshot.children {
                 let data: unitData = unitData(name: (child as! FIRDataSnapshot).key, unit: (child as! FIRDataSnapshot).value as! String)
                 self.currList.append(data)
+                self.tableView.reloadData()
             }
         })
+        currName.text = "meters"
+        currUnit.text = "m"
+        currValue.text = "1.0"
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,8 +70,10 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "unitCell", for: indexPath) as! UnitTableViewCell
         
-        cell.nameLabel?.text = currList[indexPath.row].name
-        cell.unitLabel?.text = currList[indexPath.row].unit
+        cell.nameLabel.text = currList[indexPath.row].name
+        cell.unitLabel.text = currList[indexPath.row].unit
+        
+        cell.valueLabel.text = "\(round(currMeasurement.converted(to: .feet).value * 100) / 100)"
         
         return cell
     }
