@@ -9,9 +9,10 @@
 import UIKit
 
 class CurrencyTableViewCell: UITableViewCell {
-    @IBOutlet weak var currencyName: UILabel!
-    @IBOutlet weak var currencyNum: UILabel!
-    @IBOutlet weak var currencyText: UILabel!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var value: UILabel!
+    @IBOutlet weak var unit: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

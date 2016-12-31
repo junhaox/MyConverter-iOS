@@ -45,9 +45,9 @@ class UnitTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "unitCell", for: indexPath) as! UnitTableViewCell
 
         // Configure the cell...
-        cell.unitName?.text = unitName[indexPath.row]
-        cell.unitText?.text = unitText[indexPath.row]
-        cell.unitNum?.text = unitNum[indexPath.row]
+        cell.name?.text = unitName[indexPath.row]
+        cell.unit?.text = unitText[indexPath.row]
+        cell.value?.text = unitNum[indexPath.row]
 
         return cell
     }
