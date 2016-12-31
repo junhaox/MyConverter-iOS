@@ -1,5 +1,5 @@
 //
-//  UnitTableViewController.swift
+//  CurrencyTableViewController.swift
 //  UnitConverter
 //
 //  Created by Junhao Xie on 12/28/16.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class UnitTableViewController: UITableViewController {
-    
+class CurrencyTableViewController: UITableViewController {
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,9 +26,10 @@ class UnitTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    var unitName = ["Cemimeter", "Kilometer", "Meter", "Milemeter"]
-    var unitText = ["cm", "km", "m", "mm"]
-    var unitNum = ["100", "0.01", "10", "1000"]
+
+    var currencyName = ["CNY", "USD", "SKW", "HKD"]
+    var currencyText = ["Chinese Yuan", "US Dollor", "South Korean Won", "Hong Kong Dollar"]
+    var currencyNum = ["6.92", "1.0", "1129.3", "9.54"]
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -37,17 +38,17 @@ class UnitTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return unitName.count
+        return currencyName.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "unitCell", for: indexPath) as! UnitTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "currencyCell", for: indexPath) as! CurrencyTableViewCell
 
         // Configure the cell...
-        cell.unitName?.text = unitName[indexPath.row]
-        cell.unitText?.text = unitText[indexPath.row]
-        cell.unitNum?.text = unitNum[indexPath.row]
+        cell.currencyName?.text = currencyName[indexPath.row]
+        cell.currencyText?.text = currencyText[indexPath.row]
+        cell.currencyNum?.text = currencyNum[indexPath.row]
 
         return cell
     }
