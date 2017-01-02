@@ -53,7 +53,7 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "currencyCell", for: indexPath) as! CurrencyTableViewCell
             
-        cell.imageName.image = UIImage(named: "CNY")
+        cell.imageName.image = UIImage(named: currList[indexPath.row].name)
         cell.currencyName?.text = currList[indexPath.row].name
         cell.currencyUnit?.text = currList[indexPath.row].unit
         cell.currencyValue?.text = "1.0"
