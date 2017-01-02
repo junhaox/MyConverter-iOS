@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -171,11 +173,11 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--First-->
+        <!--Unit-->
         <scene sceneID="Sxe-6e-ucq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gIq-Lv-ePp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Unit" image="first" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DDA-eG-ZmZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -190,11 +192,11 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-325.18740629685158"/>
         </scene>
-        <!--Second-->
+        <!--Currency-->
         <scene sceneID="wo2-H8-fAz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SzX-JP-zy0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Currency" image="second" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="s0d-KI-fkc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -364,7 +366,13 @@
                             <constraint firstItem="MHz-PW-EgK" firstAttribute="trailing" secondItem="OUe-Vo-bjY" secondAttribute="trailing" id="hBu-UE-jys"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Currency" id="peg-eA-AYf"/>
+                    <navigationItem key="navigationItem" title="Currency" id="peg-eA-AYf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rNQ-tM-UOY">
+                            <connections>
+                                <segue destination="HaY-cm-3VV" kind="show" identifier="chooseCurrencySegue" id="YoW-Ww-I9k"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="currImage" destination="vRf-jA-GSW" id="MYJ-Vx-V4q"/>
                         <outlet property="currName" destination="h8c-3n-0eq" id="di4-rl-Eus"/>
@@ -376,6 +384,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tI-IU-8xT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1688.8" y="358.4707646176912"/>
+        </scene>
+        <!--Choose Currency Table View Controller-->
+        <scene sceneID="vE3-0p-uj6">
+            <objects>
+                <tableViewController id="HaY-cm-3VV" customClass="ChooseCurrencyTableViewController" customModule="UnitConverter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="xqf-34-KqZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="chooseCurrencyCell" rowHeight="80" id="TPg-BI-5OB" customClass="ChooseCurrencyTableViewCell" customModule="UnitConverter" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TPg-BI-5OB" id="74V-qz-aKn">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRJ-kq-qja">
+                                            <rect key="frame" x="74" y="29" width="169" height="23"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="169" id="ebg-Wb-DJL"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                            <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xBq-s0-Ti7">
+                                            <rect key="frame" x="26" y="19" width="40" height="42"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="AtQ-CM-Piu"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1RB-kt-ayQ">
+                                            <rect key="frame" x="139" y="29" width="211" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                            <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="XRJ-kq-qja" firstAttribute="leading" secondItem="xBq-s0-Ti7" secondAttribute="trailing" constant="8" symbolic="YES" id="5Db-Ir-BgW"/>
+                                        <constraint firstItem="xBq-s0-Ti7" firstAttribute="centerY" secondItem="XRJ-kq-qja" secondAttribute="centerY" id="86Y-gm-7gM"/>
+                                        <constraint firstItem="XRJ-kq-qja" firstAttribute="firstBaseline" secondItem="1RB-kt-ayQ" secondAttribute="firstBaseline" id="Aoh-qm-thb"/>
+                                        <constraint firstItem="XRJ-kq-qja" firstAttribute="centerY" secondItem="1RB-kt-ayQ" secondAttribute="centerY" id="GRr-Fa-Syx"/>
+                                        <constraint firstItem="XRJ-kq-qja" firstAttribute="top" secondItem="74V-qz-aKn" secondAttribute="topMargin" constant="21" id="Q3A-HZ-Fbq"/>
+                                        <constraint firstItem="XRJ-kq-qja" firstAttribute="baseline" secondItem="1RB-kt-ayQ" secondAttribute="firstBaseline" id="f2P-vd-4He"/>
+                                        <constraint firstItem="xBq-s0-Ti7" firstAttribute="leading" secondItem="74V-qz-aKn" secondAttribute="leadingMargin" constant="18" id="hPd-3e-rmK"/>
+                                        <constraint firstItem="1RB-kt-ayQ" firstAttribute="leading" secondItem="xBq-s0-Ti7" secondAttribute="trailing" constant="73" id="hrs-TK-PVI"/>
+                                        <constraint firstItem="xBq-s0-Ti7" firstAttribute="top" secondItem="74V-qz-aKn" secondAttribute="topMargin" constant="11" id="qFg-eg-e4E"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="1RB-kt-ayQ" secondAttribute="trailing" constant="17" id="voi-PP-vhO"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="chooseCurrencyName" destination="XRJ-kq-qja" id="Afp-N2-rdp"/>
+                                    <outlet property="chooseCurrencyUnit" destination="1RB-kt-ayQ" id="bil-FD-NEs"/>
+                                    <outlet property="chooseImage" destination="xBq-s0-Ti7" id="cta-s5-aJU"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="HaY-cm-3VV" id="E5m-Wk-P0Z"/>
+                            <outlet property="delegate" destination="HaY-cm-3VV" id="EQy-iy-cFS"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vuB-rs-DY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2584.8000000000002" y="358.4707646176912"/>
         </scene>
     </scenes>
     <resources>

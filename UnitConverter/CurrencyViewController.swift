@@ -9,11 +9,6 @@
 import UIKit
 import FirebaseDatabase
 
-struct cellData {
-    let name: String!
-    let unit: String!
-}
-
 class CurrencyViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
@@ -83,6 +78,13 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
         self.tableView.reloadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "chooseCurrencySegue" {
+            let seg = segue.destination as! ChooseCurrencyTableViewController
+            seg.ref = self.ref
+            seg.currList = self.currList
+        }
+    }
 
     /*
     // MARK: - Navigation

@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		898020913409D7CEF3994322 /* Pods_UnitConverter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 663422FDAEE3BAF27E9FAFF5 /* Pods_UnitConverter.framework */; };
 		A10E46161E178464008A4D39 /* UnitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10E46151E178464008A4D39 /* UnitTableViewCell.swift */; };
-		A10E461A1E178CEE008A4D39 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10E46191E178CEE008A4D39 /* Structs.swift */; };
 		A124906E1E1769F80063C6F7 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A124906D1E1769F80063C6F7 /* CurrencyViewController.swift */; };
 		A154FAD41E178242000B0EB2 /* UnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154FAD31E178242000B0EB2 /* UnitViewController.swift */; };
 		A161CF8C1E17944700918383 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A161CF8B1E17944700918383 /* GoogleService-Info.plist */; };
 		A1791E171E163D1600A70F45 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1791E161E163D1600A70F45 /* CurrencyTableViewCell.swift */; };
+		A179E6341E1A414500A4E732 /* ChooseCurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179E6331E1A414500A4E732 /* ChooseCurrencyTableViewCell.swift */; };
+		A179E6361E1A419F00A4E732 /* ChooseCurrencyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179E6351E1A419F00A4E732 /* ChooseCurrencyTableViewController.swift */; };
+		A179E6381E1A430300A4E732 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179E6371E1A430300A4E732 /* Structs.swift */; };
 		A18CE8071E14AFF100F17891 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CE8061E14AFF100F17891 /* AppDelegate.swift */; };
 		A18CE80E1E14AFF100F17891 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A18CE80C1E14AFF100F17891 /* Main.storyboard */; };
 		A18CE8101E14AFF100F17891 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A18CE80F1E14AFF100F17891 /* Assets.xcassets */; };
@@ -44,11 +46,13 @@
 		6255A8D206782A3FCB718D73 /* Pods-UnitConverter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitConverter.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnitConverter/Pods-UnitConverter.release.xcconfig"; sourceTree = "<group>"; };
 		663422FDAEE3BAF27E9FAFF5 /* Pods_UnitConverter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitConverter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A10E46151E178464008A4D39 /* UnitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTableViewCell.swift; sourceTree = "<group>"; };
-		A10E46191E178CEE008A4D39 /* Structs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		A124906D1E1769F80063C6F7 /* CurrencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		A154FAD31E178242000B0EB2 /* UnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitViewController.swift; sourceTree = "<group>"; };
 		A161CF8B1E17944700918383 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A1791E161E163D1600A70F45 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
+		A179E6331E1A414500A4E732 /* ChooseCurrencyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCurrencyTableViewCell.swift; sourceTree = "<group>"; };
+		A179E6351E1A419F00A4E732 /* ChooseCurrencyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCurrencyTableViewController.swift; sourceTree = "<group>"; };
+		A179E6371E1A430300A4E732 /* Structs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		A18CE8031E14AFF100F17891 /* UnitConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18CE8061E14AFF100F17891 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A18CE80D1E14AFF100F17891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -139,7 +143,9 @@
 				A10E46151E178464008A4D39 /* UnitTableViewCell.swift */,
 				A124906D1E1769F80063C6F7 /* CurrencyViewController.swift */,
 				A1791E161E163D1600A70F45 /* CurrencyTableViewCell.swift */,
-				A10E46191E178CEE008A4D39 /* Structs.swift */,
+				A179E6351E1A419F00A4E732 /* ChooseCurrencyTableViewController.swift */,
+				A179E6331E1A414500A4E732 /* ChooseCurrencyTableViewCell.swift */,
+				A179E6371E1A430300A4E732 /* Structs.swift */,
 				A18CE8141E14AFF100F17891 /* Info.plist */,
 				A161CF8B1E17944700918383 /* GoogleService-Info.plist */,
 			);
@@ -353,9 +359,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A10E461A1E178CEE008A4D39 /* Structs.swift in Sources */,
+				A179E6381E1A430300A4E732 /* Structs.swift in Sources */,
 				A18CE8071E14AFF100F17891 /* AppDelegate.swift in Sources */,
+				A179E6341E1A414500A4E732 /* ChooseCurrencyTableViewCell.swift in Sources */,
 				A124906E1E1769F80063C6F7 /* CurrencyViewController.swift in Sources */,
+				A179E6361E1A419F00A4E732 /* ChooseCurrencyTableViewController.swift in Sources */,
 				A1791E171E163D1600A70F45 /* CurrencyTableViewCell.swift in Sources */,
 				A154FAD41E178242000B0EB2 /* UnitViewController.swift in Sources */,
 				A10E46161E178464008A4D39 /* UnitTableViewCell.swift in Sources */,
