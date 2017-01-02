@@ -25,18 +25,27 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
     var ref: FIRDatabaseReference!
     
     var currList = [cellData]()
+    var currNum: Double!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        currName.text = "USD"
+        currValue.text = "1.0"
+        currUnit.text = "United States Dollar"
+        currImage.image = UIImage(named: currName.text!)
+        currNum = 1.0
         
         ref = FIRDatabase.database().reference()
         
         ref.child("Currency").observe(.value, with: {
             snapshot in
             for child in snapshot.children {
-                let data = cellData(name: (child as! FIRDataSnapshot).key, unit: (child as! FIRDataSnapshot).value as! String)
-                self.currList.append(data)
-                self.tableView.reloadData()
+                if (child as! FIRDataSnapshot).key != self.currName.text {
+                    let data = cellData(name: (child as! FIRDataSnapshot).key, unit: (child as! FIRDataSnapshot).value as! String)
+                    self.currList.append(data)
+                    self.tableView.reloadData()
+                }
             }
         })
     }
@@ -53,13 +62,27 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "currencyCell", for: indexPath) as! CurrencyTableViewCell
             
-        cell.imageName.image = UIImage(named: currList[indexPath.row].name)
         cell.currencyName?.text = currList[indexPath.row].name
         cell.currencyUnit?.text = currList[indexPath.row].unit
         cell.currencyValue?.text = "1.0"
+        cell.imageName.image = UIImage(named: cell.currencyName.text!)
         
         return cell
     }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let tempName = currList[indexPath.row].name
+        let tempUnit = currList[indexPath.row].unit
+        
+        currList[indexPath.row] = cellData(name: currName.text, unit: currUnit.text)
+        
+        currName.text = tempName
+        currUnit.text = tempUnit
+        currImage.image = UIImage(named: currName.text!)
+        
+        self.tableView.reloadData()
+    }
+    
 
     /*
     // MARK: - Navigation
