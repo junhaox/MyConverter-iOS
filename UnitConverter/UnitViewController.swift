@@ -23,22 +23,14 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var ref: FIRDatabaseReference!
     
-    var fullList = [unitData]()
     var currList = [unitData]()
     
-    var currNum = 1.0
-    var currMeasurement = Measurement(value: 1.0, unit: UnitLength.meters)
-    
-    var unitName = [String]()
-    var unitValue = [String]()
-    var unitUnit = [String]()
+    var currNum: Double!
+    var currDimen: String!
+    var currMeasurement: NSMeasurement!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        unitName = ["cilometers", "meters", "kilometers", "miles"]
-        unitValue = ["1000", "10", "0.01", "0.016"]
-        unitUnit = ["cm", "m", "km", "mi"]
         
         ref = FIRDatabase.database().reference()
         
@@ -54,6 +46,9 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
         currUnit.text = "m"
         currValue.text = "1.0"
         
+        currNum = 1.0
+        currDimen = "Length"
+        currMeasurement = NSMeasurement(doubleValue: currNum, unit: UnitLength.meters)
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,10 +67,13 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         cell.nameLabel.text = currList[indexPath.row].name
         cell.unitLabel.text = currList[indexPath.row].unit
-        
-        cell.valueLabel.text = "\(round(currMeasurement.converted(to: .feet).value * 100) / 100)"
+        cell.valueLabel.text = "\(round(currMeasurement.converting(to: UnitLength.feet).value * 100) / 100)"
         
         return cell
+    }
+    
+    public func detectDimension(dimension: String, measurement: NSMeasurement) {
+        
     }
 
     /*

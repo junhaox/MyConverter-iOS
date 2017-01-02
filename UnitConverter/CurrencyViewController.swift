@@ -7,15 +7,38 @@
 //
 
 import UIKit
+import FirebaseDatabase
+
+struct cellData {
+    let name: String!
+    let unit: String!
+}
 
 class CurrencyViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var currImage: UIImageView!
+    @IBOutlet weak var currName: UILabel!
+    @IBOutlet weak var currValue: UILabel!
+    @IBOutlet weak var currUnit: UILabel!
+    
+    var ref: FIRDatabaseReference!
+    
+    var currList = [cellData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        ref = FIRDatabase.database().reference()
+        
+        ref.child("Currency").observe(.value, with: {
+            snapshot in
+            for child in snapshot.children {
+                let data = cellData(name: (child as! FIRDataSnapshot).key, unit: (child as! FIRDataSnapshot).value as! String)
+                self.currList.append(data)
+                self.tableView.reloadData()
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,22 +46,17 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
         // Dispose of any resources that can be recreated.
     }
     
-    var currencyName = ["CNY", "USD", "SKW", "HKD"]
-    var currencyText = ["Chinese Yuan", "US Dollor", "South Korean Won", "Hong Kong Dollar"]
-    var currencyNum = ["6.92", "1.0", "1129.3", "9.54"]
-    
-    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currencyName.count
+        return currList.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "currencyCell", for: indexPath) as! CurrencyTableViewCell
             
         cell.imageName.image = UIImage(named: "CNY")
-        cell.currencyName?.text = currencyName[indexPath.row]
-        cell.currencyValue?.text = currencyNum[indexPath.row]
-        cell.currencyUnit?.text = currencyText[indexPath.row]
+        cell.currencyName?.text = currList[indexPath.row].name
+        cell.currencyUnit?.text = currList[indexPath.row].unit
+        cell.currencyValue?.text = "1.0"
         
         return cell
     }
