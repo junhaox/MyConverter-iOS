@@ -9,11 +9,6 @@
 import UIKit
 import FirebaseDatabase
 
-struct unitData {
-    let name: String!
-    let unit: String!
-}
-
 class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
@@ -23,10 +18,10 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var ref: FIRDatabaseReference!
     
-    var currList = [unitData]()
+    var currList = [cellData]()
     
     var currNum: Double!
-    var currDimen: String!
+    var currDimen = "Length"
     var currMeasurement: NSMeasurement!
     
     override func viewDidLoad() {
@@ -34,21 +29,20 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         ref = FIRDatabase.database().reference()
         
-        ref.child("Unit").child("Length").observe(.value, with: {
+        ref.child("Unit").child(currDimen).observe(.value, with: {
             snapshot in
             for child in snapshot.children {
-                let data: unitData = unitData(name: (child as! FIRDataSnapshot).key, unit: (child as! FIRDataSnapshot).value as! String)
+                let data = cellData(name: (child as! FIRDataSnapshot).key, unit: (child as! FIRDataSnapshot).value as! String)
                 self.currList.append(data)
                 self.tableView.reloadData()
             }
         })
-        currName.text = "meters"
-        currUnit.text = "m"
+        currName.text = "miles"
+        currUnit.text = "mi"
         currValue.text = "1.0"
         
         currNum = 1.0
-        currDimen = "Length"
-        currMeasurement = NSMeasurement(doubleValue: currNum, unit: UnitLength.meters)
+        currMeasurement = NSMeasurement(doubleValue: currNum, unit: UnitLength.miles)
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,13 +61,40 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         cell.nameLabel.text = currList[indexPath.row].name
         cell.unitLabel.text = currList[indexPath.row].unit
-        cell.valueLabel.text = "\(round(currMeasurement.converting(to: UnitLength.feet).value * 100) / 100)"
+        updateValue(dimension: currDimen, unit: currList[indexPath.row].name, cellLabel: cell.valueLabel);
         
         return cell
     }
     
-    public func detectDimension(dimension: String, measurement: NSMeasurement) {
-        
+    public func updateValue(dimension: String, unit: String, cellLabel: UILabel) {
+        switch dimension {
+        case "Length":
+            if unit == "meters" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitLength.meters).value * 100) / 100)"
+            }
+            else if unit == "centimeters" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitLength.centimeters).value * 100) / 100)"
+            }
+            else if unit == "feet" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitLength.feet).value * 100) / 100)"
+            }
+            else if unit == "inches" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitLength.inches).value * 100) / 100)"
+            }
+            else if unit == "kilometers" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitLength.kilometers).value * 100) / 100)"
+            }
+            else if unit == "miles" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitLength.miles).value * 100) / 100)"
+            }
+            else if unit == "millimeters" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitLength.millimeters).value * 100) / 100)"
+            }
+            break
+            
+        default:
+            break
+        }
     }
 
     /*
