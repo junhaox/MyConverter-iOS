@@ -96,6 +96,13 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
             break
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "chooseUnitSegue" {
+            let seg = segue.destination as! ChooseUnitTableViewController
+            seg.ref = self.ref
+        }
+    }
 
     /*
     // MARK: - Navigation
