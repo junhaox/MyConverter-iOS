@@ -248,6 +248,15 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return NSMeasurement(doubleValue: 1.0, unit: UnitLength.miles)
     }
     
+    @IBAction func unwindToUnit(segue: UIStoryboardSegue) {
+        if segue.identifier == "backToUnitSegue" {
+            if let seg = segue.source as? ChooseUnitTableViewController {
+                self.ref = seg.ref
+                self.currDimen = seg.currDimen
+            }
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "chooseUnitSegue" {
             let seg = segue.destination as! ChooseUnitTableViewController

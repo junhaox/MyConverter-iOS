@@ -61,9 +61,10 @@ class ChooseUnitTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "backToUnitSegue" {
-            let seg = segue.destination as! UnitViewController
-            seg.ref = self.ref
-            seg.currDimen = self.currDimen
+            if let seg = segue.destination as? UnitViewController {
+                seg.ref = self.ref
+                seg.currDimen = self.currDimen
+            }
         }
     }
 
