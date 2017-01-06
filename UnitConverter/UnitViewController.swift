@@ -66,6 +66,52 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let tempName = currList[indexPath.row].name
+        let tempUnit = currList[indexPath.row].unit
+        
+        currList[indexPath.row] = cellData(name: currName.text, unit: currUnit.text)
+        
+        currName.text = tempName
+        currUnit.text = tempUnit
+
+        currMeasurement = updateMeasurement(dimension: currDimen, unit: tempName!)
+        
+        self.tableView.reloadData()
+    }
+    
+    public func updateMeasurement(dimension: String, unit: String) -> NSMeasurement {
+        switch dimension {
+        case "Length":
+            if unit == "meters" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitLength.meters)
+            }
+            else if unit == "centimeters" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitLength.centimeters)
+            }
+            else if unit == "feet" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitLength.feet)
+            }
+            else if unit == "inches" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitLength.inches)
+            }
+            else if unit == "kilometers" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitLength.kilometers)
+            }
+            else if unit == "miles" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitLength.miles)
+            }
+            else if unit == "millimeters" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitLength.millimeters)
+            }
+            break
+            
+        default:
+            break
+        }
+        return NSMeasurement(doubleValue: 1.0, unit: UnitLength.miles)
+    }
+    
     public func updateValue(dimension: String, unit: String, cellLabel: UILabel) {
         switch dimension {
         case "Length":
