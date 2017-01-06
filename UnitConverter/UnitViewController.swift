@@ -20,7 +20,7 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var currList = [cellData]()
     
-    var currNum: Double!
+    var currNum = 1.0
     var currDimen = "Length"
     var currMeasurement: NSMeasurement!
     
@@ -37,12 +37,10 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.tableView.reloadData()
             }
         })
-        currName.text = "miles"
-        currUnit.text = "mi"
-        currValue.text = "1.0"
         
-        currNum = 1.0
-        currMeasurement = NSMeasurement(doubleValue: currNum, unit: UnitLength.miles)
+        currMeasurement = updateHead(dimension: currDimen, nameLabel: currName, unitLabel: currUnit)
+        
+        currValue.text = "1.0"
     }
 
     override func didReceiveMemoryWarning() {
@@ -105,6 +103,48 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 return NSMeasurement(doubleValue: currNum, unit: UnitLength.millimeters)
             }
             break
+        
+        case "Area":
+            if unit == "squareMeters" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitArea.squareMeters)
+            }
+            else if unit == "squareCentimeters" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitArea.squareCentimeters)
+            }
+            else if unit == "squareFeet" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitArea.squareFeet)
+            }
+            else if unit == "squareInches" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitArea.squareInches)
+            }
+            else if unit == "squareKilometers" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitArea.squareKilometers)
+            }
+            else if unit == "squareMiles" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitArea.squareMiles)
+            }
+            else if unit == "squareMillimeters" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitArea.squareMillimeters)
+            }
+            break
+            
+        case "Mass":
+            if unit == "grams" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitMass.grams)
+            }
+            else if unit == "kilograms" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitMass.kilograms)
+            }
+            else if unit == "metricTons" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitMass.metricTons)
+            }
+            else if unit == "ounces" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitMass.ounces)
+            }
+            else if unit == "pounds" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitMass.pounds)
+            }
+            break
             
         default:
             break
@@ -137,10 +177,75 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitLength.millimeters).value * 100) / 100)"
             }
             break
+        
+        case "Area":
+            if unit == "squareMeters" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitArea.squareMeters).value * 100) / 100)"
+            }
+            else if unit == "squareCentimeters" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitArea.squareCentimeters).value * 100) / 100)"
+            }
+            else if unit == "squareFeet" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitArea.squareFeet).value * 100) / 100)"
+            }
+            else if unit == "squareInches" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitArea.squareInches).value * 100) / 100)"
+            }
+            else if unit == "squareKilometers" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitArea.squareKilometers).value * 100) / 100)"
+            }
+            else if unit == "squareMiles" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitArea.squareMiles).value * 100) / 100)"
+            }
+            else if unit == "squareMillimeters" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitArea.squareMillimeters).value * 100) / 100)"
+            }
+            break
+            
+        case "Mass":
+            if unit == "grams" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitMass.grams).value * 100) / 100)"
+            }
+            else if unit == "kilograms" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitMass.kilograms).value * 100) / 100)"
+            }
+            else if unit == "metricTons" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitMass.metricTons).value * 100) / 100)"
+            }
+            else if unit == "ounces" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitMass.ounces).value * 100) / 100)"
+            }
+            else if unit == "pounds" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitMass.pounds).value * 100) / 100)"
+            }
+            break
             
         default:
             break
         }
+    }
+    
+    public func updateHead(dimension: String, nameLabel: UILabel, unitLabel: UILabel) -> NSMeasurement {
+        switch dimension {
+        case "Length":
+            nameLabel.text = "miles"
+            unitLabel.text = "mi"
+            return NSMeasurement(doubleValue: 1.0, unit: UnitLength.miles)
+            
+        case "Area":
+            nameLabel.text = "squareMeters"
+            unitLabel.text = "m²"
+            return NSMeasurement(doubleValue: 1.0, unit: UnitArea.squareMeters)
+            
+        case "Mass":
+            nameLabel.text = "kilograms"
+            unitLabel.text = "kg"
+            return NSMeasurement(doubleValue: 1.0, unit: UnitMass.kilograms)
+            
+        default:
+            break
+        }
+        return NSMeasurement(doubleValue: 1.0, unit: UnitLength.miles)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
