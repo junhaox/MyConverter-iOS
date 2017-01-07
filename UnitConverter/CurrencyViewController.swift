@@ -44,8 +44,6 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
                 }
             }
         })
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,36 +60,10 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
             
         cell.currencyName?.text = currList[indexPath.row].name
         cell.currencyUnit?.text = currList[indexPath.row].unit
-        updateValue(dict: jsonCurrency, valueLabel: cell.currencyValue)
+        cell.currencyValue?.text = "\(self.jsonCurrency[(cell.currencyName?.text)!])"
         cell.imageName.image = UIImage(named: cell.currencyName.text!)
         
         return cell
-    }
-    
-    public func updateValue(dict: [String: AnyObject], valueLabel: UILabel) {
-        
-    }
-    
-    public func updateJson(base: String) {
-        let url = "http://api.fixer.io/latest"
-        
-        let urlRequest = URL(string: url)
-        
-        URLSession.shared.dataTask(with: urlRequest!) { (data, response, error) in
-            if error != nil {
-                print(error.debugDescription)
-            }
-            else {
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String: AnyObject]
-                    self.jsonCurrency = json["rates"] as! [String : AnyObject]
-                }
-                catch let err {
-                    print(err)
-                }
-            }
-        }.resume()
-        
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -104,7 +76,32 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
         currUnit.text = tempUnit
         currImage.image = UIImage(named: currName.text!)
         
+        updateJson(base: currName.text!)
+        
         self.tableView.reloadData()
+    }
+    
+    public func updateJson(base: String) {
+        let url = "http://api.fixer.io/latest?base=" + base
+        
+        let urlRequest = URL(string: url)
+        
+        URLSession.shared.dataTask(with: urlRequest!, completionHandler: {
+            (data, response, error) in
+            if error != nil {
+                print(error.debugDescription)
+            }
+            else {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSDictionary
+                    self.jsonCurrency = json["rates"] as! [String : AnyObject]
+                    print(self.jsonCurrency)
+                }
+                catch let err{
+                    print(err)
+                }
+            }
+        }).resume()
     }
     
     @IBAction func unwindToCurrency(segue: UIStoryboardSegue) {
