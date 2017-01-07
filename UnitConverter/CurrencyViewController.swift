@@ -30,6 +30,7 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
         currValue.text = "1.0"
         currUnit.text = "Euro"
         currImage.image = UIImage(named: currName.text!)
+        
         updateJson(base: currName.text!)
         
         ref = FIRDatabase.database().reference()
@@ -57,9 +58,12 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "currencyCell", for: indexPath) as! CurrencyTableViewCell
-            
+        
         cell.currencyName?.text = currList[indexPath.row].name
         cell.currencyUnit?.text = currList[indexPath.row].unit
+        if (self.jsonCurrency[(cell.currencyName?.text)!] != nil) {
+            print(self.jsonCurrency[(cell.currencyName?.text)!]!)
+        }
         cell.currencyValue?.text = "\(self.jsonCurrency[(cell.currencyName?.text)!])"
         cell.imageName.image = UIImage(named: cell.currencyName.text!)
         
@@ -95,7 +99,6 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
                 do {
                     let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSDictionary
                     self.jsonCurrency = json["rates"] as! [String : AnyObject]
-                    print(self.jsonCurrency)
                 }
                 catch let err{
                     print(err)
