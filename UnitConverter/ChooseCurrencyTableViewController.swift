@@ -15,9 +15,13 @@ class ChooseCurrencyTableViewController: UITableViewController {
     
     var fullList = [cellData]()
     var currList = [cellData]()
+    var alert: UIAlertController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        alert = UIAlertController(title: "This currency has already been added", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         
         ref.child("Currency").observe(.value, with: {
             snapshot in
@@ -61,13 +65,19 @@ class ChooseCurrencyTableViewController: UITableViewController {
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let data = fullList[indexPath.row]
-        for d in currList {
-            if d.name == data.name {
-                print("yes")
+        let newData = fullList[indexPath.row]
+        var isAdded = false
+        for data in currList {
+            if newData.name == data.name {
+                isAdded = true
+                self.present(alert, animated: true, completion: nil)
             }
         }
+        if !isAdded {
+            currList.append(newData)
+        }
         
+        self.performSegue(withIdentifier: "backToCurrencySegue", sender: Any?.self)
     }
 
 }
