@@ -27,6 +27,8 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        currList = []
+        
         ref = FIRDatabase.database().reference()
         
         ref.child("Unit").child(currDimen).observe(.value, with: {
@@ -254,6 +256,7 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.ref = seg.ref
                 self.currDimen = seg.currDimen
             }
+            self.viewDidLoad()
         }
     }
     
