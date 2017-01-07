@@ -21,14 +21,16 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
     
     var currList = [cellData]()
     var currNum = 1.0
+    var jsonCurrency = [String: AnyObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currName.text = "USD"
+        currName.text = "EUR"
         currValue.text = "1.0"
-        currUnit.text = "United States Dollar"
+        currUnit.text = "Euro"
         currImage.image = UIImage(named: currName.text!)
+        updateJson(base: currName.text!)
         
         ref = FIRDatabase.database().reference()
         
@@ -42,6 +44,8 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
                 }
             }
         })
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,10 +62,36 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
             
         cell.currencyName?.text = currList[indexPath.row].name
         cell.currencyUnit?.text = currList[indexPath.row].unit
-        cell.currencyValue?.text = "1.0"
+        updateValue(dict: jsonCurrency, valueLabel: cell.currencyValue)
         cell.imageName.image = UIImage(named: cell.currencyName.text!)
         
         return cell
+    }
+    
+    public func updateValue(dict: [String: AnyObject], valueLabel: UILabel) {
+        
+    }
+    
+    public func updateJson(base: String) {
+        let url = "http://api.fixer.io/latest"
+        
+        let urlRequest = URL(string: url)
+        
+        URLSession.shared.dataTask(with: urlRequest!) { (data, response, error) in
+            if error != nil {
+                print(error.debugDescription)
+            }
+            else {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String: AnyObject]
+                    self.jsonCurrency = json["rates"] as! [String : AnyObject]
+                }
+                catch let err {
+                    print(err)
+                }
+            }
+        }.resume()
+        
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -96,7 +126,7 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
     }
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let remove = UITableViewRowAction(style: .normal, title: "Remove") { action, indexPath in
+        let remove = UITableViewRowAction(style: .normal, title: "Remove") { (action, indexPath) in
             self.currList.remove(at: indexPath.row)
             self.tableView.reloadData()
         }
