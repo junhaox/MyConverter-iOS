@@ -20,7 +20,7 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
     var ref: FIRDatabaseReference!
     
     var currList = [cellData]()
-    var currNum: Double!
+    var currNum = 1.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,6 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
         currValue.text = "1.0"
         currUnit.text = "United States Dollar"
         currImage.image = UIImage(named: currName.text!)
-        currNum = 1.0
         
         ref = FIRDatabase.database().reference()
         
@@ -76,6 +75,16 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
         currImage.image = UIImage(named: currName.text!)
         
         self.tableView.reloadData()
+    }
+    
+    @IBAction func unwindToCurrency(segue: UIStoryboardSegue) {
+        if segue.identifier == "backToCurrencySegue" {
+            if let seg = segue.source as? ChooseCurrencyTableViewController {
+                self.ref = seg.ref
+                self.currList = seg.currList
+                self.tableView.reloadData()
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

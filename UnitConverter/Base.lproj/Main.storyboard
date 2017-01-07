@@ -500,8 +500,12 @@
                             <outlet property="delegate" destination="HaY-cm-3VV" id="EQy-iy-cFS"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="EcX-Bx-j6m" kind="unwind" identifier="backToCurrencySegue" unwindAction="unwindToCurrencyWithSegue:" id="tpH-K8-zau"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vuB-rs-DY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="EcX-Bx-j6m" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2584.8000000000002" y="358.4707646176912"/>
         </scene>
