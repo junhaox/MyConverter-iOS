@@ -65,7 +65,6 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "currencyCell", for: indexPath) as! CurrencyTableViewCell
         
-        currNum = Double(currValue.text!)!
         cell.currencyName?.text = currList[indexPath.row].name
         cell.currencyUnit?.text = currList[indexPath.row].unit
         if let forcedValue = self.jsonCurrency[currList[indexPath.row].name] as? Double {
@@ -94,7 +93,13 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func textFieldDidChange(_ textField: UITextField) {
         textField.becomeFirstResponder()
-        currNum = Double(textField.text!)!
+        if textField.text == "" {
+            currNum = 0.0
+            currValue.text = "0"
+        }
+        else {
+            currNum = Double(textField.text!)!
+        }
         self.tableView.reloadData()
     }
     
