@@ -196,6 +196,87 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
             break
             
+        case "Angle":
+            if unit == "degrees" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitAngle.degrees)
+            }
+            else if unit == "radians" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitAngle.radians)
+            }
+            break
+        
+        case "Temperature":
+            if unit == "celsius" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitTemperature.celsius)
+            }
+            else if unit == "fahrenheit" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitTemperature.fahrenheit)
+            }
+            break
+            
+        case "Energy":
+            if unit == "calories" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitEnergy.calories)
+            }
+            else if unit == "joules" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitEnergy.joules)
+            }
+            else if unit == "kilowattHours" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitEnergy.kilowattHours)
+            }
+            break
+            
+        case "Speed":
+            if unit == "kilometersPerHour" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitSpeed.kilometersPerHour)
+            }
+            else if unit == "metersPerSecond" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitSpeed.metersPerSecond)
+            }
+            else if unit == "milesPerHour" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitSpeed.milesPerHour)
+            }
+            break
+            
+        case "Power":
+            if unit == "horsepower" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitPower.horsepower)
+            }
+            else if unit == "kilowatts" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitPower.kilowatts)
+            }
+            else if unit == "watts" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitPower.watts)
+            }
+            break
+            
+        case "Volume":
+            if unit == "cubicFeet" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitVolume.cubicFeet)
+            }
+            else if unit == "cubicInches" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitVolume.cubicInches)
+            }
+            else if unit == "cubicKilometers" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitVolume.cubicKilometers)
+            }
+            else if unit == "cubicMeters" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitVolume.cubicMeters)
+            }
+            else if unit == "cubicMiles" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitVolume.cubicMiles)
+            }
+            else if unit == "fluidOunces" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitVolume.fluidOunces)
+            }
+            else if unit == "cubicMillimeters" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitVolume.cubicMillimeters)
+            }
+            else if unit == "gallons" {
+                return NSMeasurement(doubleValue: currNum, unit: UnitVolume.gallons)
+            }
+            break
+            
         default:
             break
         }
@@ -270,6 +351,111 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
             break
             
+        case "Angle":
+            if unit == "degrees" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitAngle.degrees).value * 100) / 100)"
+            }
+            else if unit == "radians" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitAngle.radians).value * 100) / 100)"
+            }
+            break
+            
+        case "Area":
+            if unit == "squareMeters" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitArea.squareMeters).value * 100) / 100)"
+            }
+            else if unit == "squareCentimeters" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitArea.squareCentimeters).value * 100) / 100)"
+            }
+            else if unit == "squareFeet" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitArea.squareFeet).value * 100) / 100)"
+            }
+            else if unit == "squareInches" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitArea.squareInches).value * 100) / 100)"
+            }
+            else if unit == "squareKilometers" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitArea.squareKilometers).value * 100) / 100)"
+            }
+            else if unit == "squareMiles" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitArea.squareMiles).value * 100) / 100)"
+            }
+            else if unit == "squareMillimeters" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitArea.squareMillimeters).value * 100) / 100)"
+            }
+            break
+            
+        case "Temperature":
+            if unit == "celsius" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitTemperature.celsius).value * 100) / 100)"
+            }
+            else if unit == "fahrenheit" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitTemperature.fahrenheit).value * 100) / 100)"
+            }
+            break
+            
+        case "Energy":
+            if unit == "calories" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitEnergy.calories).value * 100) / 100)"
+            }
+            else if unit == "joules" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitEnergy.joules).value * 100) / 100)"
+            }
+            else if unit == "kilowattHours" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitEnergy.kilowattHours).value * 100) / 100)"
+            }
+            break
+            
+        case "Speed":
+            if unit == "kilometersPerHour" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitSpeed.kilometersPerHour).value * 100) / 100)"
+            }
+            else if unit == "metersPerSecond" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitSpeed.metersPerSecond).value * 100) / 100)"
+            }
+            else if unit == "milesPerHour" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitSpeed.milesPerHour).value * 100) / 100)"
+            }
+            break
+            
+        case "Power":
+            if unit == "horsepower" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitPower.horsepower).value * 100) / 100)"
+            }
+            else if unit == "kilowatts" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitPower.kilowatts).value * 100) / 100)"
+            }
+            else if unit == "watts" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitPower.watts).value * 100) / 100)"
+            }
+            break
+            
+        case "Volume":
+            if unit == "cubicFeet" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitVolume.cubicFeet).value * 100) / 100)"
+            }
+            else if unit == "cubicInches" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitVolume.cubicInches).value * 100) / 100)"
+            }
+            else if unit == "cubicKilometers" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitVolume.cubicKilometers).value * 100) / 100)"
+            }
+            else if unit == "cubicMeters" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitVolume.cubicMeters).value * 100) / 100)"
+            }
+            else if unit == "cubicMiles" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitVolume.cubicMiles).value * 100) / 100)"
+            }
+            else if unit == "fluidOunces" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitVolume.fluidOunces).value * 100) / 100)"
+            }
+            else if unit == "cubicMillimeters" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitVolume.cubicMillimeters).value * 100) / 100)"
+            }
+            else if unit == "gallons" {
+                cellLabel.text = "\(round(self.currMeasurement.converting(to: UnitVolume.gallons).value * 100) / 100)"
+            }
+            break
+            
         default:
             break
         }
@@ -291,6 +477,36 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
             nameLabel.text = "kilograms"
             unitLabel.text = "kg"
             return NSMeasurement(doubleValue: 1.0, unit: UnitMass.kilograms)
+        
+        case "Angle":
+            nameLabel.text = "degrees"
+            unitLabel.text = "°"
+            return NSMeasurement(doubleValue: 1.0, unit: UnitAngle.degrees)
+            
+        case "Energy":
+            nameLabel.text = "calories"
+            unitLabel.text = "cal"
+            return NSMeasurement(doubleValue: 1.0, unit: UnitEnergy.calories)
+            
+        case "Power":
+            nameLabel.text = "horsepower"
+            unitLabel.text = "hp"
+            return NSMeasurement(doubleValue: 1.0, unit: UnitPower.horsepower)
+            
+        case "Speed":
+            nameLabel.text = "milesPerHour"
+            unitLabel.text = "mph"
+            return NSMeasurement(doubleValue: 1.0, unit: UnitSpeed.milesPerHour)
+            
+        case "Temperature":
+            nameLabel.text = "celsius"
+            unitLabel.text = "°C"
+            return NSMeasurement(doubleValue: 1.0, unit: UnitTemperature.celsius)
+            
+        case "Volume":
+            nameLabel.text = "cubicMeters"
+            unitLabel.text = "m³"
+            return NSMeasurement(doubleValue: 1.0, unit: UnitVolume.cubicMeters)
             
         default:
             break
