@@ -26,8 +26,11 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currName.text = "EUR"
-        currUnit.text = "Euro"
+        currValue.addTarget(self, action: #selector(CurrencyViewController.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
+        currValue.keyboardType = .decimalPad
+        
+        currName.text = "USD"
+        currUnit.text = "United States Dollar"
         currImage.image = UIImage(named: currName.text!)
         
         updateJson(base: currName.text!)
@@ -49,6 +52,10 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -83,6 +90,12 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
         currImage.image = UIImage(named: currName.text!)
         
         updateJson(base: currName.text!)
+    }
+    
+    func textFieldDidChange(_ textField: UITextField) {
+        textField.becomeFirstResponder()
+        currNum = Double(textField.text!)!
+        self.tableView.reloadData()
     }
     
     public func updateJson(base: String) {
