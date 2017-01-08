@@ -13,8 +13,9 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var currName: UILabel!
-    @IBOutlet weak var currValue: UILabel!
     @IBOutlet weak var currUnit: UILabel!
+    @IBOutlet weak var currValue: UITextField!
+    
     
     var ref: FIRDatabaseReference!
     
@@ -26,6 +27,13 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        currNum = 1.0
+        currValue.text = "1.0"
+        
+        currValue.resignFirstResponder()
+        currValue.addTarget(self, action: #selector(CurrencyViewController.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
+        currValue.keyboardType = .decimalPad
         
         currList = []
         
@@ -41,13 +49,15 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
         })
         
         currMeasurement = updateHead(dimension: currDimen, nameLabel: currName, unitLabel: currUnit)
-        
-        currValue.text = "1.0"
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,6 +88,42 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
         currMeasurement = updateMeasurement(dimension: currDimen, unit: tempName!)
         
         self.tableView.reloadData()
+    }
+    
+    func textFieldDidChange(_ textField: UITextField) {
+        textField.becomeFirstResponder()
+        if textField.text == "" || textField.text == "0" {
+            currNum = 0.0
+            currValue.text = "0"
+            currMeasurement = updateMeasurement(dimension: currDimen, unit: currName.text!)
+        }
+            
+        else {
+            if ((textField.text?[(textField.text?.startIndex)!])! == "0") && (textField.text?[(textField.text?.index(after: (textField.text?.startIndex)!))!] != ".") {
+                textField.text?.remove(at: (textField.text?.startIndex)!)
+            }
+            currNum = Double(textField.text!)!
+            currMeasurement = updateMeasurement(dimension: currDimen, unit: currName.text!)
+        }
+        self.tableView.reloadData()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if(string == "," || string == "." ){
+            let countdots = (textField.text?.components(separatedBy: ".").count)! - 1
+            
+            if countdots > 0 && (string == "." || string == "," )
+            {
+                return false
+            }
+        }
+        
+        return true
     }
     
     public func updateMeasurement(dimension: String, unit: String) -> NSMeasurement {
@@ -151,7 +197,7 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
         default:
             break
         }
-        return NSMeasurement(doubleValue: 1.0, unit: UnitLength.miles)
+        return NSMeasurement(doubleValue: currNum, unit: UnitLength.miles)
     }
     
     public func updateValue(dimension: String, unit: String, cellLabel: UILabel) {
