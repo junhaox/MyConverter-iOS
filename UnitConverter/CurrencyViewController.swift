@@ -9,13 +9,13 @@
 import UIKit
 import FirebaseDatabase
 
-class CurrencyViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CurrencyViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var currImage: UIImageView!
     @IBOutlet weak var currName: UILabel!
-    @IBOutlet weak var currValue: UILabel!
     @IBOutlet weak var currUnit: UILabel!
+    @IBOutlet weak var currValue: UITextField!
     
     var ref: FIRDatabaseReference!
     
@@ -27,7 +27,6 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         
         currName.text = "EUR"
-        currValue.text = "1.0"
         currUnit.text = "Euro"
         currImage.image = UIImage(named: currName.text!)
         
@@ -59,10 +58,11 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "currencyCell", for: indexPath) as! CurrencyTableViewCell
         
+        currNum = Double(currValue.text!)!
         cell.currencyName?.text = currList[indexPath.row].name
         cell.currencyUnit?.text = currList[indexPath.row].unit
         if let forcedValue = self.jsonCurrency[currList[indexPath.row].name] as? Double {
-            cell.currencyValue?.text = "\(round(forcedValue * 100) / 100)"
+            cell.currencyValue?.text = "\(round(forcedValue * currNum * 100) / 100)"
         }
         else {
             cell.currencyValue?.text = ""
