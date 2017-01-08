@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabase
 
-class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var currName: UILabel!
@@ -27,6 +27,8 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        currValue.delegate = self
         
         currNum = 1.0
         currValue.text = "1.0"

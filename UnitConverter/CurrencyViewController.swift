@@ -26,6 +26,8 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        currValue.delegate = self
+        
         currValue.resignFirstResponder()
         currValue.addTarget(self, action: #selector(CurrencyViewController.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
         currValue.keyboardType = .decimalPad
