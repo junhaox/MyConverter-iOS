@@ -166,6 +166,7 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
             let seg = segue.destination as! ChooseCurrencyTableViewController
             seg.ref = self.ref
             seg.currList = self.currList
+            seg.currName = self.currName.text as String!
         }
     }
 
