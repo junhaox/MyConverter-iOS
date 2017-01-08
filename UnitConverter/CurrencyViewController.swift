@@ -61,10 +61,12 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
         
         cell.currencyName?.text = currList[indexPath.row].name
         cell.currencyUnit?.text = currList[indexPath.row].unit
-        if (self.jsonCurrency[(cell.currencyName?.text)!] != nil) {
-            print(self.jsonCurrency[(cell.currencyName?.text)!]!)
+        if let forcedValue = self.jsonCurrency[currList[indexPath.row].name] as? Double {
+            cell.currencyValue?.text = "\(round(forcedValue * 100) / 100)"
         }
-        cell.currencyValue?.text = "\(self.jsonCurrency[(cell.currencyName?.text)!])"
+        else {
+            cell.currencyValue?.text = ""
+        }
         cell.imageName.image = UIImage(named: cell.currencyName.text!)
         
         return cell
@@ -81,8 +83,6 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
         currImage.image = UIImage(named: currName.text!)
         
         updateJson(base: currName.text!)
-        
-        self.tableView.reloadData()
     }
     
     public func updateJson(base: String) {
@@ -99,6 +99,9 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
                 do {
                     let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSDictionary
                     self.jsonCurrency = json["rates"] as! [String : AnyObject]
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                 }
                 catch let err{
                     print(err)
