@@ -112,6 +112,19 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
         return true
     }
     
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if(string == "," || string == "." ){
+            let countdots = (textField.text?.components(separatedBy: ".").count)! - 1
+            
+            if countdots > 0 && (string == "." || string == "," )
+            {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
     public func updateJson(base: String) {
         let url = "http://api.fixer.io/latest?base=" + base
         
