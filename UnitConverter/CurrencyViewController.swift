@@ -93,11 +93,15 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func textFieldDidChange(_ textField: UITextField) {
         textField.becomeFirstResponder()
-        if textField.text == "" {
+        if textField.text == "" || textField.text == "0" {
             currNum = 0.0
             currValue.text = "0"
         }
+            
         else {
+            if ((textField.text?[(textField.text?.startIndex)!])! == "0") && (textField.text?[(textField.text?.index(after: (textField.text?.startIndex)!))!] != ".") {
+                textField.text?.remove(at: (textField.text?.startIndex)!)
+            }
             currNum = Double(textField.text!)!
         }
         self.tableView.reloadData()
