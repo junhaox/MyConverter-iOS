@@ -98,6 +98,11 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
         self.tableView.reloadData()
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     public func updateJson(base: String) {
         let url = "http://api.fixer.io/latest?base=" + base
         
