@@ -80,7 +80,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lla-6r-uRb" id="3Vp-LQ-HY6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7k-3Z-8DY">
@@ -147,7 +147,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Unit" id="lfC-sF-34d">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cIi-1p-4Z0">
+                        <barButtonItem key="rightBarButtonItem" image="HamburgerMenu" id="cIi-1p-4Z0">
                             <connections>
                                 <segue destination="k9S-s1-hIL" kind="show" identifier="chooseUnitSegue" id="M5u-o0-Eum"/>
                             </connections>
@@ -520,6 +520,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="HamburgerMenu" width="24" height="24"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
