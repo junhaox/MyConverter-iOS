@@ -38,6 +38,8 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
         
         updateJson(base: currName.text!)
         
+        var count = 0
+        
         ref = FIRDatabase.database().reference()
         
         ref.child("Currency").observe(.value, with: {
@@ -47,6 +49,10 @@ class CurrencyViewController: UIViewController, UITableViewDataSource, UITableVi
                     let data = cellData(name: (child as! FIRDataSnapshot).key, unit: (child as! FIRDataSnapshot).value as! String)
                     self.currList.append(data)
                     self.tableView.reloadData()
+                    count += 1
+                    if (count > 6) {
+                        break
+                    }
                 }
             }
         })
